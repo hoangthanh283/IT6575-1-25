@@ -21,7 +21,7 @@ if ! kubectl cluster-info &> /dev/null; then
     exit 1
 fi
 
-echo "✅ kubectl is available and cluster is accessible"
+echo "kubectl is available and cluster is accessible"
 echo ""
 
 # Create namespace (optional)
@@ -31,7 +31,7 @@ kubectl create namespace micro-lab --dry-run=client -o yaml | kubectl apply -f -
 # Set context to use the namespace
 kubectl config set-context --current --namespace=micro-lab
 
-echo "✅ Namespace 'micro-lab' created and set as default"
+echo "Namespace 'micro-lab' created and set as default"
 echo ""
 
 # Deploy services
@@ -40,19 +40,19 @@ echo "----------------------------------------"
 
 echo "Deploying Users Service..."
 kubectl apply -f users-deploy.yaml
-echo "✅ Users service deployed"
+echo "Users service deployed"
 
 echo "Deploying Catalog Service..."  
 kubectl apply -f catalog-deploy.yaml
-echo "✅ Catalog service deployed"
+echo "Catalog service deployed"
 
 echo "Deploying Orders Service..."
 kubectl apply -f orders-deploy.yaml
-echo "✅ Orders service deployed"
+echo "Orders service deployed"
 
 echo "Deploying Ingress Gateway..."
 kubectl apply -f gateway-ingress.yaml
-echo "✅ Ingress gateway deployed"
+echo "Ingress gateway deployed"
 
 echo ""
 echo "Waiting for pods to be ready..."

@@ -13,25 +13,25 @@ echo "----------------------------------------"
 # Remove ingress first
 echo "Removing Ingress Gateway..."
 kubectl delete -f gateway-ingress.yaml --ignore-not-found=true
-echo "✅ Ingress gateway removed"
+echo "Ingress gateway removed"
 
 # Remove services and deployments
 echo "Removing Orders Service..."
 kubectl delete -f orders-deploy.yaml --ignore-not-found=true
-echo "✅ Orders service removed"
+echo "Orders service removed"
 
 echo "Removing Catalog Service..."
 kubectl delete -f catalog-deploy.yaml --ignore-not-found=true
-echo "✅ Catalog service removed"
+echo "Catalog service removed"
 
 echo "Removing Users Service..."
 kubectl delete -f users-deploy.yaml --ignore-not-found=true
-echo "✅ Users service removed"
+echo "Users service removed"
 
 # Remove namespace
 echo "Removing namespace 'micro-lab'..."
 kubectl delete namespace micro-lab --ignore-not-found=true
-echo "✅ Namespace removed"
+echo "Namespace removed"
 
 # Reset context to default namespace
 kubectl config set-context --current --namespace=default
@@ -44,7 +44,7 @@ echo "Checking for remaining resources..."
 # Check if any resources remain
 REMAINING_PODS=$(kubectl get pods -n micro-lab 2>/dev/null | wc -l)
 if [ $REMAINING_PODS -eq 0 ]; then
-    echo "✅ All resources cleaned up successfully"
+    echo "All resources cleaned up successfully"
 else
     echo "⚠️  Some resources may still be terminating..."
     kubectl get pods -n micro-lab 2>/dev/null || echo "Namespace already removed"

@@ -1,36 +1,51 @@
 #!/bin/bash
 
-# Demo script for KVSS (Key-Value Store Service)
-# This script demonstrates the basic functionality of the KVSS system
-
 echo "=========================================="
 echo "KVSS (Key-Value Store Service) Demo"
 echo "=========================================="
 
-# Check if Python is available
 if ! command -v python3 &> /dev/null; then
     echo "Error: Python 3 is required but not installed."
     exit 1
 fi
 
+cleanup_existing_servers() {
+    echo "Checking for existing KVSS servers..."
+    pkill -f "python3.*kvss_server.py" 2>/dev/null || true
+    sleep 1
+    
+    if lsof -i :5050 >/dev/null 2>&1; then
+        echo "Port 5050 is still in use. Attempting to free it..."
+        PID=$(lsof -t -i :5050 2>/dev/null)
+        if [ ! -z "$PID" ]; then
+            kill -9 $PID 2>/dev/null || true
+            sleep 1
+        fi
+    fi
+}
+
+cleanup_existing_servers
+
 echo "Starting KVSS Server in background..."
 
-# Start server in background
 cd server
 python3 kvss_server.py &
 SERVER_PID=$!
 cd ..
 
-# Wait for server to start
 sleep 2
 
-echo "Server started with PID: $SERVER_PID"
+if ! kill -0 $SERVER_PID 2>/dev/null; then
+    echo "Error: Server failed to start. Check for port conflicts."
+    exit 1
+fi
+
+echo "Server started successfully with PID: $SERVER_PID"
 echo ""
 
 echo "Running test sequence..."
 echo "----------------------------------------"
 
-# Run the test sequence
 cd tests
 python3 test_kvss.py --manual
 cd ..
@@ -39,7 +54,6 @@ echo ""
 echo "Running full test suite..."
 echo "----------------------------------------"
 
-# Run full test suite
 cd tests
 python3 test_kvss.py
 cd ..
@@ -47,13 +61,22 @@ cd ..
 echo ""
 echo "Demo completed. Stopping server..."
 
-# Kill the server
-kill $SERVER_PID 2>/dev/null
+stop_server() {
+    if [ ! -z "$SERVER_PID" ] && kill -0 $SERVER_PID 2>/dev/null; then
+        echo "Stopping server with PID: $SERVER_PID"
+        kill $SERVER_PID 2>/dev/null
+        
+        sleep 2
+        
+        if kill -0 $SERVER_PID 2>/dev/null; then
+            echo "Force stopping server..."
+            kill -9 $SERVER_PID 2>/dev/null
+        fi
+    fi
+    pkill -f "python3.*kvss_server.py" 2>/dev/null || true
+}
 
+trap stop_server EXIT
+stop_server
 echo "Server stopped."
 echo "=========================================="
-
-
-
-
-
