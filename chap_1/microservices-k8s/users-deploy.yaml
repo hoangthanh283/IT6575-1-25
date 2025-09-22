@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deploy
+  labels:
+    app: users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+      - name: users
+        image: hashicorp/http-echo:0.2.3
+        args:
+          - "-text=Hello from Users Service! Hostname: $(HOSTNAME)"
+        ports:
+        - containerPort: 5678
+        env:
+        - name: HOSTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+  labels:
+    app: users
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 5678
+    protocol: TCP
+  selector:
+    app: users
+
+
+
+

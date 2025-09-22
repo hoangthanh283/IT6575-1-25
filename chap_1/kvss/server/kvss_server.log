@@ -1,0 +1,207 @@
+2025-09-18 21:51:00,619 - INFO - KVSS Server started on 127.0.0.1:5050
+2025-09-18 21:51:03,661 - INFO - New connection from ('127.0.0.1', 64414)
+2025-09-18 21:51:03,664 - INFO - Request from ('127.0.0.1', 64414): KV/1.0 PUT user42 Alice
+2025-09-18 21:51:03,665 - INFO - Response to ('127.0.0.1', 64414): 201 CREATED
+2025-09-18 21:51:03,665 - INFO - Connection closed for ('127.0.0.1', 64414)
+2025-09-18 21:51:03,666 - INFO - New connection from ('127.0.0.1', 64415)
+2025-09-18 21:51:03,666 - INFO - Request from ('127.0.0.1', 64415): KV/1.0 GET user42
+2025-09-18 21:51:03,666 - INFO - Response to ('127.0.0.1', 64415): 200 OK Alice
+2025-09-18 21:51:03,667 - INFO - Connection closed for ('127.0.0.1', 64415)
+2025-09-18 21:51:03,667 - INFO - New connection from ('127.0.0.1', 64416)
+2025-09-18 21:51:03,667 - INFO - Request from ('127.0.0.1', 64416): KV/1.0 DEL user42
+2025-09-18 21:51:03,667 - INFO - Response to ('127.0.0.1', 64416): 204 NO_CONTENT
+2025-09-18 21:51:03,668 - INFO - Connection closed for ('127.0.0.1', 64416)
+2025-09-18 21:51:03,668 - INFO - New connection from ('127.0.0.1', 64417)
+2025-09-18 21:51:03,668 - INFO - Request from ('127.0.0.1', 64417): KV/1.0 GET user42
+2025-09-18 21:51:03,668 - INFO - Response to ('127.0.0.1', 64417): 404 NOT_FOUND
+2025-09-18 21:51:03,669 - INFO - Connection closed for ('127.0.0.1', 64417)
+2025-09-18 21:51:03,669 - INFO - New connection from ('127.0.0.1', 64418)
+2025-09-18 21:51:03,669 - INFO - Request from ('127.0.0.1', 64418): KV/1.0 STATS
+2025-09-18 21:51:03,670 - INFO - Response to ('127.0.0.1', 64418): 200 OK keys=0 uptime=3s served=5
+2025-09-18 21:51:03,670 - INFO - Connection closed for ('127.0.0.1', 64418)
+2025-09-18 21:51:03,671 - INFO - New connection from ('127.0.0.1', 64419)
+2025-09-18 21:51:03,671 - INFO - Request from ('127.0.0.1', 64419): KV/1.0 QUIT
+2025-09-18 21:51:03,671 - INFO - Response to ('127.0.0.1', 64419): 200 OK bye
+2025-09-18 21:51:03,672 - INFO - Connection closed for ('127.0.0.1', 64419)
+2025-09-18 21:51:04,802 - INFO - New connection from ('127.0.0.1', 64422)
+2025-09-18 21:51:04,803 - INFO - Request from ('127.0.0.1', 64422): KV/1.0 PUT user42 Alice
+2025-09-18 21:51:04,803 - INFO - Response to ('127.0.0.1', 64422): 201 CREATED
+2025-09-18 21:51:04,803 - INFO - Connection closed for ('127.0.0.1', 64422)
+2025-09-18 21:51:04,803 - INFO - New connection from ('127.0.0.1', 64423)
+2025-09-18 21:51:04,804 - INFO - Request from ('127.0.0.1', 64423): KV/1.0 GET user42
+2025-09-18 21:51:04,804 - INFO - Response to ('127.0.0.1', 64423): 200 OK Alice
+2025-09-18 21:51:04,804 - INFO - Connection closed for ('127.0.0.1', 64423)
+2025-09-18 21:51:04,804 - INFO - New connection from ('127.0.0.1', 64424)
+2025-09-18 21:51:04,805 - INFO - Request from ('127.0.0.1', 64424): KV/1.0 PUT user42 Bob
+2025-09-18 21:51:04,805 - INFO - Response to ('127.0.0.1', 64424): 200 OK
+2025-09-18 21:51:04,805 - INFO - Connection closed for ('127.0.0.1', 64424)
+2025-09-18 21:51:04,806 - INFO - New connection from ('127.0.0.1', 64425)
+2025-09-18 21:51:04,806 - INFO - Request from ('127.0.0.1', 64425): KV/1.0 DEL user42
+2025-09-18 21:51:04,806 - INFO - Response to ('127.0.0.1', 64425): 204 NO_CONTENT
+2025-09-18 21:51:04,807 - INFO - Connection closed for ('127.0.0.1', 64425)
+2025-09-18 21:51:04,807 - INFO - New connection from ('127.0.0.1', 64426)
+2025-09-18 21:51:04,809 - INFO - Request from ('127.0.0.1', 64426): KV/1.0 STATS
+2025-09-18 21:51:04,809 - INFO - Response to ('127.0.0.1', 64426): 200 OK keys=0 uptime=4s served=11
+2025-09-18 21:51:04,810 - INFO - Connection closed for ('127.0.0.1', 64426)
+2025-09-18 21:51:04,810 - INFO - New connection from ('127.0.0.1', 64427)
+2025-09-18 21:51:04,811 - INFO - Request from ('127.0.0.1', 64427): PUT user43 Charlie
+2025-09-18 21:51:04,811 - INFO - Response to ('127.0.0.1', 64427): 426 UPGRADE_REQUIRED
+2025-09-18 21:51:04,811 - INFO - Connection closed for ('127.0.0.1', 64427)
+2025-09-18 21:51:04,811 - INFO - New connection from ('127.0.0.1', 64428)
+2025-09-18 21:51:04,812 - INFO - Request from ('127.0.0.1', 64428): KV/2.0 GET user42
+2025-09-18 21:51:04,812 - INFO - Response to ('127.0.0.1', 64428): 426 UPGRADE_REQUIRED
+2025-09-18 21:51:04,812 - INFO - Connection closed for ('127.0.0.1', 64428)
+2025-09-18 21:51:04,813 - INFO - New connection from ('127.0.0.1', 64429)
+2025-09-18 21:51:04,813 - INFO - Request from ('127.0.0.1', 64429): KV/1.0 POTT user42 Alice
+2025-09-18 21:51:04,813 - INFO - Response to ('127.0.0.1', 64429): 400 BAD_REQUEST
+2025-09-18 21:51:04,815 - INFO - Connection closed for ('127.0.0.1', 64429)
+2025-09-18 21:51:04,818 - INFO - New connection from ('127.0.0.1', 64430)
+2025-09-18 21:51:04,818 - INFO - Request from ('127.0.0.1', 64430): KV/1.0 GET nonexistent
+2025-09-18 21:51:04,819 - INFO - Response to ('127.0.0.1', 64430): 404 NOT_FOUND
+2025-09-18 21:51:04,823 - INFO - Connection closed for ('127.0.0.1', 64430)
+2025-09-18 21:51:04,824 - INFO - New connection from ('127.0.0.1', 64431)
+2025-09-18 21:51:04,825 - INFO - Request from ('127.0.0.1', 64431): KV/1.0 PUT user44
+2025-09-18 21:51:04,825 - INFO - Response to ('127.0.0.1', 64431): 400 BAD_REQUEST
+2025-09-18 21:51:04,826 - INFO - Connection closed for ('127.0.0.1', 64431)
+2025-09-18 21:51:04,826 - INFO - New connection from ('127.0.0.1', 64432)
+2025-09-18 21:51:04,826 - INFO - Request from ('127.0.0.1', 64432): KV/1.0 QUIT
+2025-09-18 21:51:04,826 - INFO - Response to ('127.0.0.1', 64432): 200 OK bye
+2025-09-18 21:51:04,826 - INFO - Connection closed for ('127.0.0.1', 64432)
+2025-09-22 14:29:01,405 - INFO - KVSS Server started on 127.0.0.1:5050
+2025-09-22 14:29:04,371 - INFO - New connection from ('127.0.0.1', 58539)
+2025-09-22 14:29:04,372 - INFO - Request from ('127.0.0.1', 58539): KV/1.0 PUT user42 Alice
+2025-09-22 14:29:04,373 - INFO - Response to ('127.0.0.1', 58539): 201 CREATED
+2025-09-22 14:29:04,374 - INFO - Connection closed for ('127.0.0.1', 58539)
+2025-09-22 14:29:04,375 - INFO - New connection from ('127.0.0.1', 58540)
+2025-09-22 14:29:04,376 - INFO - Request from ('127.0.0.1', 58540): KV/1.0 GET user42
+2025-09-22 14:29:04,376 - INFO - Response to ('127.0.0.1', 58540): 200 OK Alice
+2025-09-22 14:29:04,377 - INFO - Connection closed for ('127.0.0.1', 58540)
+2025-09-22 14:29:04,378 - INFO - New connection from ('127.0.0.1', 58541)
+2025-09-22 14:29:04,378 - INFO - Request from ('127.0.0.1', 58541): KV/1.0 DEL user42
+2025-09-22 14:29:04,378 - INFO - Response to ('127.0.0.1', 58541): 204 NO_CONTENT
+2025-09-22 14:29:04,379 - INFO - Connection closed for ('127.0.0.1', 58541)
+2025-09-22 14:29:04,380 - INFO - New connection from ('127.0.0.1', 58542)
+2025-09-22 14:29:04,380 - INFO - Request from ('127.0.0.1', 58542): KV/1.0 GET user42
+2025-09-22 14:29:04,380 - INFO - Response to ('127.0.0.1', 58542): 404 NOT_FOUND
+2025-09-22 14:29:04,381 - INFO - Connection closed for ('127.0.0.1', 58542)
+2025-09-22 14:29:04,382 - INFO - New connection from ('127.0.0.1', 58543)
+2025-09-22 14:29:04,382 - INFO - Request from ('127.0.0.1', 58543): KV/1.0 STATS
+2025-09-22 14:29:04,382 - INFO - Response to ('127.0.0.1', 58543): 200 OK keys=0 uptime=2s served=5
+2025-09-22 14:29:04,382 - INFO - Connection closed for ('127.0.0.1', 58543)
+2025-09-22 14:29:04,383 - INFO - New connection from ('127.0.0.1', 58544)
+2025-09-22 14:29:04,383 - INFO - Request from ('127.0.0.1', 58544): KV/1.0 QUIT
+2025-09-22 14:29:04,383 - INFO - Response to ('127.0.0.1', 58544): 200 OK bye
+2025-09-22 14:29:04,383 - INFO - Connection closed for ('127.0.0.1', 58544)
+2025-09-22 14:29:05,528 - INFO - New connection from ('127.0.0.1', 58546)
+2025-09-22 14:29:05,528 - INFO - Request from ('127.0.0.1', 58546): KV/1.0 PUT user42 Alice
+2025-09-22 14:29:05,528 - INFO - Response to ('127.0.0.1', 58546): 201 CREATED
+2025-09-22 14:29:05,529 - INFO - Connection closed for ('127.0.0.1', 58546)
+2025-09-22 14:29:05,529 - INFO - New connection from ('127.0.0.1', 58547)
+2025-09-22 14:29:05,530 - INFO - Request from ('127.0.0.1', 58547): KV/1.0 GET user42
+2025-09-22 14:29:05,530 - INFO - Response to ('127.0.0.1', 58547): 200 OK Alice
+2025-09-22 14:29:05,530 - INFO - Connection closed for ('127.0.0.1', 58547)
+2025-09-22 14:29:05,531 - INFO - New connection from ('127.0.0.1', 58548)
+2025-09-22 14:29:05,531 - INFO - Request from ('127.0.0.1', 58548): KV/1.0 PUT user42 Bob
+2025-09-22 14:29:05,531 - INFO - Response to ('127.0.0.1', 58548): 200 OK
+2025-09-22 14:29:05,531 - INFO - Connection closed for ('127.0.0.1', 58548)
+2025-09-22 14:29:05,532 - INFO - New connection from ('127.0.0.1', 58549)
+2025-09-22 14:29:05,532 - INFO - Request from ('127.0.0.1', 58549): KV/1.0 DEL user42
+2025-09-22 14:29:05,532 - INFO - Response to ('127.0.0.1', 58549): 204 NO_CONTENT
+2025-09-22 14:29:05,533 - INFO - Connection closed for ('127.0.0.1', 58549)
+2025-09-22 14:29:05,533 - INFO - New connection from ('127.0.0.1', 58550)
+2025-09-22 14:29:05,533 - INFO - Request from ('127.0.0.1', 58550): KV/1.0 STATS
+2025-09-22 14:29:05,533 - INFO - Response to ('127.0.0.1', 58550): 200 OK keys=0 uptime=4s served=11
+2025-09-22 14:29:05,533 - INFO - Connection closed for ('127.0.0.1', 58550)
+2025-09-22 14:29:05,534 - INFO - New connection from ('127.0.0.1', 58551)
+2025-09-22 14:29:05,534 - INFO - Request from ('127.0.0.1', 58551): PUT user43 Charlie
+2025-09-22 14:29:05,534 - INFO - Response to ('127.0.0.1', 58551): 426 UPGRADE_REQUIRED
+2025-09-22 14:29:05,534 - INFO - Connection closed for ('127.0.0.1', 58551)
+2025-09-22 14:29:05,534 - INFO - New connection from ('127.0.0.1', 58552)
+2025-09-22 14:29:05,535 - INFO - Request from ('127.0.0.1', 58552): KV/2.0 GET user42
+2025-09-22 14:29:05,535 - INFO - Response to ('127.0.0.1', 58552): 426 UPGRADE_REQUIRED
+2025-09-22 14:29:05,535 - INFO - Connection closed for ('127.0.0.1', 58552)
+2025-09-22 14:29:05,535 - INFO - New connection from ('127.0.0.1', 58553)
+2025-09-22 14:29:05,535 - INFO - Request from ('127.0.0.1', 58553): KV/1.0 POTT user42 Alice
+2025-09-22 14:29:05,536 - INFO - Response to ('127.0.0.1', 58553): 400 BAD_REQUEST
+2025-09-22 14:29:05,536 - INFO - Connection closed for ('127.0.0.1', 58553)
+2025-09-22 14:29:05,536 - INFO - New connection from ('127.0.0.1', 58554)
+2025-09-22 14:29:05,536 - INFO - Request from ('127.0.0.1', 58554): KV/1.0 GET nonexistent
+2025-09-22 14:29:05,536 - INFO - Response to ('127.0.0.1', 58554): 404 NOT_FOUND
+2025-09-22 14:29:05,537 - INFO - Connection closed for ('127.0.0.1', 58554)
+2025-09-22 14:29:05,537 - INFO - New connection from ('127.0.0.1', 58555)
+2025-09-22 14:29:05,537 - INFO - Request from ('127.0.0.1', 58555): KV/1.0 PUT user44
+2025-09-22 14:29:05,537 - INFO - Response to ('127.0.0.1', 58555): 400 BAD_REQUEST
+2025-09-22 14:29:05,538 - INFO - Connection closed for ('127.0.0.1', 58555)
+2025-09-22 14:29:05,538 - INFO - New connection from ('127.0.0.1', 58556)
+2025-09-22 14:29:05,538 - INFO - Request from ('127.0.0.1', 58556): KV/1.0 QUIT
+2025-09-22 14:29:05,538 - INFO - Response to ('127.0.0.1', 58556): 200 OK bye
+2025-09-22 14:29:05,538 - INFO - Connection closed for ('127.0.0.1', 58556)
+2025-09-22 14:33:15,020 - INFO - KVSS Server started on 127.0.0.1:5050
+2025-09-22 14:33:18,026 - INFO - New connection from ('127.0.0.1', 58761)
+2025-09-22 14:33:18,027 - INFO - Request from ('127.0.0.1', 58761): KV/1.0 PUT user42 Alice
+2025-09-22 14:33:18,027 - INFO - Response to ('127.0.0.1', 58761): 201 CREATED
+2025-09-22 14:33:18,027 - INFO - Connection closed for ('127.0.0.1', 58761)
+2025-09-22 14:33:18,028 - INFO - New connection from ('127.0.0.1', 58762)
+2025-09-22 14:33:18,028 - INFO - Request from ('127.0.0.1', 58762): KV/1.0 GET user42
+2025-09-22 14:33:18,028 - INFO - Response to ('127.0.0.1', 58762): 200 OK Alice
+2025-09-22 14:33:18,028 - INFO - Connection closed for ('127.0.0.1', 58762)
+2025-09-22 14:33:18,029 - INFO - New connection from ('127.0.0.1', 58763)
+2025-09-22 14:33:18,029 - INFO - Request from ('127.0.0.1', 58763): KV/1.0 DEL user42
+2025-09-22 14:33:18,029 - INFO - Response to ('127.0.0.1', 58763): 204 NO_CONTENT
+2025-09-22 14:33:18,029 - INFO - Connection closed for ('127.0.0.1', 58763)
+2025-09-22 14:33:18,030 - INFO - New connection from ('127.0.0.1', 58764)
+2025-09-22 14:33:18,030 - INFO - Request from ('127.0.0.1', 58764): KV/1.0 GET user42
+2025-09-22 14:33:18,030 - INFO - Response to ('127.0.0.1', 58764): 404 NOT_FOUND
+2025-09-22 14:33:18,031 - INFO - Connection closed for ('127.0.0.1', 58764)
+2025-09-22 14:33:18,035 - INFO - New connection from ('127.0.0.1', 58765)
+2025-09-22 14:33:18,035 - INFO - Request from ('127.0.0.1', 58765): KV/1.0 STATS
+2025-09-22 14:33:18,035 - INFO - Response to ('127.0.0.1', 58765): 200 OK keys=0 uptime=3s served=5
+2025-09-22 14:33:18,035 - INFO - Connection closed for ('127.0.0.1', 58765)
+2025-09-22 14:33:18,036 - INFO - New connection from ('127.0.0.1', 58766)
+2025-09-22 14:33:18,036 - INFO - Request from ('127.0.0.1', 58766): KV/1.0 QUIT
+2025-09-22 14:33:18,036 - INFO - Response to ('127.0.0.1', 58766): 200 OK bye
+2025-09-22 14:33:18,036 - INFO - Connection closed for ('127.0.0.1', 58766)
+2025-09-22 14:33:19,178 - INFO - New connection from ('127.0.0.1', 58768)
+2025-09-22 14:33:19,179 - INFO - Request from ('127.0.0.1', 58768): KV/1.0 PUT user42 Alice
+2025-09-22 14:33:19,179 - INFO - Response to ('127.0.0.1', 58768): 201 CREATED
+2025-09-22 14:33:19,180 - INFO - Connection closed for ('127.0.0.1', 58768)
+2025-09-22 14:33:19,181 - INFO - New connection from ('127.0.0.1', 58769)
+2025-09-22 14:33:19,182 - INFO - Request from ('127.0.0.1', 58769): KV/1.0 GET user42
+2025-09-22 14:33:19,182 - INFO - Response to ('127.0.0.1', 58769): 200 OK Alice
+2025-09-22 14:33:19,182 - INFO - Connection closed for ('127.0.0.1', 58769)
+2025-09-22 14:33:19,183 - INFO - New connection from ('127.0.0.1', 58770)
+2025-09-22 14:33:19,183 - INFO - Request from ('127.0.0.1', 58770): KV/1.0 PUT user42 Bob
+2025-09-22 14:33:19,183 - INFO - Response to ('127.0.0.1', 58770): 200 OK
+2025-09-22 14:33:19,184 - INFO - Connection closed for ('127.0.0.1', 58770)
+2025-09-22 14:33:19,184 - INFO - New connection from ('127.0.0.1', 58771)
+2025-09-22 14:33:19,184 - INFO - Request from ('127.0.0.1', 58771): KV/1.0 DEL user42
+2025-09-22 14:33:19,184 - INFO - Response to ('127.0.0.1', 58771): 204 NO_CONTENT
+2025-09-22 14:33:19,185 - INFO - Connection closed for ('127.0.0.1', 58771)
+2025-09-22 14:33:19,185 - INFO - New connection from ('127.0.0.1', 58772)
+2025-09-22 14:33:19,185 - INFO - Request from ('127.0.0.1', 58772): KV/1.0 STATS
+2025-09-22 14:33:19,185 - INFO - Response to ('127.0.0.1', 58772): 200 OK keys=0 uptime=4s served=11
+2025-09-22 14:33:19,186 - INFO - Connection closed for ('127.0.0.1', 58772)
+2025-09-22 14:33:19,186 - INFO - New connection from ('127.0.0.1', 58773)
+2025-09-22 14:33:19,186 - INFO - Request from ('127.0.0.1', 58773): PUT user43 Charlie
+2025-09-22 14:33:19,186 - INFO - Response to ('127.0.0.1', 58773): 426 UPGRADE_REQUIRED
+2025-09-22 14:33:19,187 - INFO - Connection closed for ('127.0.0.1', 58773)
+2025-09-22 14:33:19,187 - INFO - New connection from ('127.0.0.1', 58774)
+2025-09-22 14:33:19,188 - INFO - Request from ('127.0.0.1', 58774): KV/2.0 GET user42
+2025-09-22 14:33:19,188 - INFO - Response to ('127.0.0.1', 58774): 426 UPGRADE_REQUIRED
+2025-09-22 14:33:19,189 - INFO - Connection closed for ('127.0.0.1', 58774)
+2025-09-22 14:33:19,189 - INFO - New connection from ('127.0.0.1', 58775)
+2025-09-22 14:33:19,189 - INFO - Request from ('127.0.0.1', 58775): KV/1.0 POTT user42 Alice
+2025-09-22 14:33:19,189 - INFO - Response to ('127.0.0.1', 58775): 400 BAD_REQUEST
+2025-09-22 14:33:19,190 - INFO - Connection closed for ('127.0.0.1', 58775)
+2025-09-22 14:33:19,190 - INFO - New connection from ('127.0.0.1', 58776)
+2025-09-22 14:33:19,190 - INFO - Request from ('127.0.0.1', 58776): KV/1.0 GET nonexistent
+2025-09-22 14:33:19,190 - INFO - Response to ('127.0.0.1', 58776): 404 NOT_FOUND
+2025-09-22 14:33:19,191 - INFO - Connection closed for ('127.0.0.1', 58776)
+2025-09-22 14:33:19,192 - INFO - New connection from ('127.0.0.1', 58777)
+2025-09-22 14:33:19,192 - INFO - Request from ('127.0.0.1', 58777): KV/1.0 PUT user44
+2025-09-22 14:33:19,192 - INFO - Response to ('127.0.0.1', 58777): 400 BAD_REQUEST
+2025-09-22 14:33:19,192 - INFO - Connection closed for ('127.0.0.1', 58777)
+2025-09-22 14:33:19,193 - INFO - New connection from ('127.0.0.1', 58778)
+2025-09-22 14:33:19,193 - INFO - Request from ('127.0.0.1', 58778): KV/1.0 QUIT
+2025-09-22 14:33:19,193 - INFO - Response to ('127.0.0.1', 58778): 200 OK bye
+2025-09-22 14:33:19,194 - INFO - Connection closed for ('127.0.0.1', 58778)
