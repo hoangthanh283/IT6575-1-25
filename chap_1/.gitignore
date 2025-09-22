@@ -1,0 +1,26 @@
+# Cache folders.
+.DS_Store
+.idea/
+__pycache__/
+.pytest_cache/
+.cache/
+
+# Jupyter Notebook.
+.ipynb_checkpoints
+
+# Python envs.
+.env
+.venv
+
+# VS Code
+.vscode
+
+# Exclude inputs (documents) by default
+data/inputs/
+
+# Exclude log folder
+logs
+env/
+assets/
+Footer
+*.log
