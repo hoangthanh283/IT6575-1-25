@@ -81,7 +81,6 @@ class KVSSServer:
 
     def process_request(self, request: str) -> str:
         self.requests_served += 1
-
         try:
             parts = request.strip().split()
             if len(parts) < 2:
@@ -90,10 +89,7 @@ class KVSSServer:
             version = parts[0]
             command = parts[1]
 
-            if not version.startswith("KV/"):
-                return "400 BAD_REQUEST"
-
-            if version != "KV/1.0":
+            if not version.startswith("KV/") or version != "KV/1.0":
                 return "426 UPGRADE_REQUIRED"
 
             if command == "PUT":

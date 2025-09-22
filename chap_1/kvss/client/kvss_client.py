@@ -43,7 +43,9 @@ class KVSSClient:
         try:
             if command.strip().upper() in ["HELP", "EXIT"]:
                 return self.handle_local_command(command.strip().upper())
-            request = f"KV/1.0 {command.strip()}"
+            
+            # Send exactly what the user types - no automatic KV/1.0 prefix
+            request = command.strip()
             self.socket.send((request + "\n").encode("utf-8"))
             logging.info(f"Sent: {request}")
             response = self.socket.recv(1024).decode("utf-8").strip()
@@ -56,20 +58,25 @@ class KVSSClient:
     def handle_local_command(self, command: str) -> str:
         if command == "HELP":
             return """
-Available commands:
-  PUT key value - Store key-value pair
-  GET key      - Retrieve value for key
-  DEL key      - Delete key
-  STATS        - Get server statistics
-  QUIT         - Disconnect from server
-  HELP         - Show this help message
-  EXIT         - Exit client
+KVSS Client - Protocol KV/1.0
+Available commands (you must include KV/1.0 prefix):
+  PUT key value - Store key-value pair (201 CREATED if new, 200 OK if updated)
+  GET key       - Retrieve value for key (200 OK + data, or 404 NOT_FOUND)
+  DEL key       - Delete key (204 NO_CONTENT if deleted, 404 NOT_FOUND)
+  STATS         - Get server statistics (200 OK + stats)
+  QUIT          - Disconnect from server (200 OK bye)
+  HELP          - Show this help message
+  EXIT          - Exit client
 
 Examples:
-  PUT user42 Alice
-  GET user42
-  DEL user42
-  STATS
+  KV/1.0 PUT user42 Alice
+  KV/1.0 GET user42
+  KV/1.0 DEL user42
+  KV/1.0 STATS
+  KV/1.0 QUIT
+
+Note: Keys cannot contain spaces. Values can contain spaces.
+Protocol format: KV/1.0 <command> [<args>]
 """
         elif command == "EXIT":
             return "CLIENT_EXIT"
@@ -78,6 +85,7 @@ Examples:
 
     def interactive_mode(self) -> None:
         print("KVSS Client - Interactive Mode")
+        print("Protocol format: KV/1.0 <command> [<args>]")
         print('Type "HELP" for commands, "EXIT" to quit')
         print("-" * 40)
         while True:
