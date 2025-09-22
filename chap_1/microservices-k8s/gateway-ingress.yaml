@@ -13,25 +13,20 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: users-service
+            name: users-svc
             port:
               number: 80
       - path: /catalog
         pathType: Prefix
         backend:
           service:
-            name: catalog-service
+            name: catalog-svc
             port:
               number: 80
       - path: /orders
         pathType: Prefix
         backend:
           service:
-            name: orders-service
+            name: orders-svc
             port:
               number: 80
-
-
-
-
-
