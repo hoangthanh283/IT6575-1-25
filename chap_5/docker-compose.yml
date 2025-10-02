@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  mysql-master:
+    image: mysql:8.0
+    platform: linux/arm64/v8
+    container_name: mysql-master
+    environment:
+      - MYSQL_ROOT_PASSWORD=MyRootPw!234
+      - MYSQL_USER=slave_user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=petdatabase
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./master/conf.d:/etc/mysql/conf.d
+      - ./dump:/dump
+      - master-data:/var/lib/mysql
+    command: >
+      --server-id=1
+      --log-bin=mysql-bin
+      --binlog-do-db=petdatabase
+      --bind-address=0.0.0.0
+      --local-infile=1
+    networks:
+      mysql-replication:
+        aliases:
+          - mysql-master
+    restart: unless-stopped
+
+  mysql-slave:
+    image: mysql:8.0
+    platform: linux/arm64/v8
+    container_name: mysql-slave
+    environment:
+      - MYSQL_ROOT_PASSWORD=MyRootPw!234
+      - MYSQL_DATABASE=petdatabase
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./slave/conf.d:/etc/mysql/conf.d
+      - ./dump:/dump
+      - slave-data:/var/lib/mysql
+    command: >
+      --server-id=2
+      --relay-log=mysql-relay-bin
+      --log-bin=mysql-bin
+      --binlog-do-db=petdatabase
+    networks:
+      mysql-replication:
+        aliases:
+          - mysql-slave
+    depends_on:
+      - mysql-master
+    restart: unless-stopped
+
+volumes:
+  master-data:
+  slave-data:
+
+networks:
+  mysql-replication:
+    driver: bridge
